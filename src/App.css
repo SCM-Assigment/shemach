@@ -62,3 +62,8 @@ img{
 section{
   padding: 60px 0px
 }
+
+.section_title {
+  text-align: center;
+  color: #0a1d37;
+}
