@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 import { NavLink } from "react-router-dom";
 
 import "./header.css";
 
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 import logo from "../../assets/images/eco-logo.png";
 import user_icon from "../../assets/images/user-icon.png";
@@ -27,6 +27,10 @@ const nav__links = [
 ];
 
 const header = () => {
+	const menuRef = useRef(null);
+
+	const menuToggle = () => menuRef.current.classList.toggle("active__menu");
+	useEffect(() => {});
 	return (
 		<header className="header">
 			<Container>
@@ -34,13 +38,10 @@ const header = () => {
 					<div className="nav__wrapper">
 						<div className="logo">
 							<img src={logo} alt="logo" />
-							<h1>multimart</h1>
-							{/* <div>
-								<p>Since 1995</p>
-							</div> */}
+							<h1>Multimart</h1>
 						</div>
 
-						<div className="navigation">
+						<div className="navigation" ref={menuRef} onClick={menuToggle}>
 							<ul className="menu">
 								{/* <li className="nav__item">
 									<NavLink to="home">Home</NavLink>
@@ -71,11 +72,11 @@ const header = () => {
 						<div className="nav__icons">
 							<span className="cart__icon">
 								<i class="ri-shopping-bag-line"></i>
-                <span className="badge">2</span>
+								<span className="badge">2</span>
 							</span>
 							<span className="fav__icon">
 								<i class="ri-heart-line"></i>
-                <span className="badge">2</span>
+								<span className="badge">2</span>
 							</span>
 							<span>
 								<motion.img
@@ -84,12 +85,11 @@ const header = () => {
 									alt="user_icon"
 								/>
 							</span>
-						</div>
-
-						<div className="mobile_menu">
-							<span>
-								<i class="ri-menu-line"></i>
-							</span>
+							<div className="mobile_menu">
+								<span onClick={menuToggle}>
+									<i class="ri-menu-line"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 				</Row>

@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../redux/slices/cartSlice";
+
 import {
 	Col,
 	Card,
@@ -13,15 +16,30 @@ import { motion } from "framer-motion";
 
 import "../../styles/product-card.css";
 
-const ProductCard = ({item}) => {
+const ProductCard = ({ item }) => {
+	const dispatch = useDispatch();
+
+	const addToCart = () => {
+		dispatch(
+			cartActions.addItem({
+				id: item.id,
+				productName: item.productName,
+				price: item.price,
+				image: item.imgUrl,
+			})
+		);
+
+		alert("Item added to cart");
+	};
 	return (
 		<Col lg="3" md="4">
 			<Card
 				className="product__item"
 				style={{
 					border: "none",
-					boxShadow: "11px 14px 19px rgba(0, 0, 0, 0.2)",
-					marginTop:"20px"
+					boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+					marginTop: "20px",
+					marginLeft: "10px",
 				}}
 			>
 				<CardImg top width="100%" src={item.imgUrl} alt="Modern Armchair" />
@@ -47,7 +65,7 @@ const ProductCard = ({item}) => {
 					</CardSubtitle>
 					<div className="product__card-bottom d-flex align-items-center justify-content-between p-2">
 						<span className="price">${item.price}</span>
-						<motion.span whileTap={{ scale: 1.2 }}>
+						<motion.span whileTap={{ scale: 1.2 }} onClick={addToCart}>
 							<i className="ri-add-line"></i>
 						</motion.span>
 					</div>
