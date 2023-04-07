@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {toast } from "react-toastify";
 
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../redux/slices/cartSlice";
@@ -29,7 +30,7 @@ const ProductCard = ({ item }) => {
 			})
 		);
 
-		alert("Item added to cart");
+		toast.success("Item added to cart")
 	};
 	return (
 		<Col lg="3" md="4">
