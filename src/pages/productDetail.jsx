@@ -15,18 +15,7 @@ const productDetail = () => {
 	const dispatch = useDispatch();
 	const [relatedProducts, setRelatedProducts] = useState([]);
 
-	const addToCart = (item) => {
-		dispatch(
-			cartActions.addItem({
-				id: item.id,
-				productName: item.productName,
-				price: item.price,
-				image: item.imgUrl,
-			})
-		);
-		toast.success("Item added to cart");
-	};
-
+	
 	const { id } = useParams();
 	const product = products.find((product) => product.id === id);
 	console.log(product);
@@ -40,6 +29,19 @@ const productDetail = () => {
 		shortDesc,
 		category,
 	} = product;
+	
+	const addToCart = () => {
+		dispatch(
+			cartActions.addItem({
+				id: product.id,
+				productName: product.productName,
+				price: product.price,
+				imgUrl: product.imgUrl,
+			})
+		);
+		toast.success("Item added to cart");
+	};
+	
 
 	useEffect(() => {
 		const filteredProducts = products.filter(

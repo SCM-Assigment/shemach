@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import "./header.css";
 
@@ -29,17 +29,26 @@ const nav__links = [
 ];
 
 const header = () => {
+	const navigate = useNavigate();
 	const totalQuantity = useSelector(state => state.cart.totalQuantity)
 	const menuRef = useRef(null);
 
 	const menuToggle = () => menuRef.current.classList.toggle("active__menu");
-	useEffect(() => {});
+	useEffect(() => {});  
+
+	const navigateToCart = () => {
+		navigate("/cart");
+	};
+
+	const navigateToHome = () =>{
+		navigate("/home")
+	}
 	return (
 		<header className="header">
 			<Container>
 				<Row>
 					<div className="nav__wrapper">
-						<div className="logo">
+						<div className="logo" onClick={navigateToHome}>
 							<img src={logo} alt="logo" />
 							<h1>Multimart</h1>
 						</div>
@@ -74,7 +83,7 @@ const header = () => {
 
 						<div className="nav__icons">
 							<span className="cart__icon">
-								<i class="ri-shopping-bag-line"></i>
+								<i onClick={navigateToCart} class="ri-shopping-bag-line"></i>
 								<span className="badge">{totalQuantity}</span>
 							</span>
 							<span className="fav__icon">
