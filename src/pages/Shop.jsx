@@ -68,7 +68,7 @@ const shop = () => {
 									<option value="mobile">Mobile</option>
 									<option value="chair">Chair</option>
 									<option value="watch">Watch</option>
-									<option value="wireless" Wireless></option>
+									<option value="wireless">Wireless</option>
 								</select>
 							</div>
 						</Col>
