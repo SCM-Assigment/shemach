@@ -8,20 +8,24 @@ import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// Creating a root element and rendering the app
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<ToastContainer
+  <React.StrictMode>
+    {/* Wrapping the app in BrowserRouter to enable routing */}
+    <BrowserRouter>
+      {/* Notification toast container */}
+      <ToastContainer
         theme="dark"
-				position="top-right"
-				autoClose={3000}
-				closeOnClick
-				pauseOnHover = {false}
-			/>
-			
-			<Provider store={store}>
-				<App />
-			</Provider>
-		</BrowserRouter>
-	</React.StrictMode>
+        position="top-right"
+        autoClose={3000}
+        closeOnClick
+        pauseOnHover={false}
+      />
+
+      {/* Providing the Redux store to the app */}
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>
 );
