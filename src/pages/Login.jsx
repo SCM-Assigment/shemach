@@ -8,40 +8,33 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-// Define the Login component
 const Login = () => {
-  // Define state variables using the useState hook
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-
-  // Get the navigate function from the react-router-dom package
   const navigate = useNavigate();
 
-  // Define the signIn function
   const signIn = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
-    setLoading(true); // Set loading to true while the sign-in process is in progress
+    e.preventDefault();
+    setLoading(true);
 
     try {
-      // Attempt to sign in with email and password using Firebase authentication
       await signInWithEmailAndPassword(auth, email, password);
-      toast.success("Login Successful"); // Display a success message using the react-toastify package
-      navigate("/"); // Navigate to the home page after successful login
-      setLoading(false); // Set loading to false after the sign-in process is complete
+      toast.success("Login Successful");
+      navigate("/");
+      setLoading(false);
     } catch (error) {
-      setLoading(false); // Set loading to false in case of an error
-      toast.error(error.message); // Display an error message using the react-toastify package
+      setLoading(false);
+      toast.error(error.message);
     }
   };
 
-  // Return the JSX for the Login component
   return (
     <Helmet title="Login">
       <section>
         <Container>
           <Row>
-            {loading ? ( // Display a spinner if loading is true, otherwise display the login form
+            {loading ? (
               <div className="spinner-container d-flex justify-content-center">
                 <div
                   className="spinner-border text-primary"
@@ -56,7 +49,7 @@ const Login = () => {
                     <input
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      type="Email"
+                      type="email"
                       placeholder="Enter your email"
                     />
                   </FormGroup>
