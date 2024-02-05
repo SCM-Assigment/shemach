@@ -1,57 +1,65 @@
-
+/* Styles for the logo */
 .logo {
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
 }
 
- .logo img{
-    width: 1.5rem;
-    height: 1.5rem;
-    color: #fff;
+/* Styles for the logo image */
+.logo img {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #fff;
 }
 
+/* Styles for h4 elements */
 h4 {
-    color:#fff
+  color: #fff;
 }
 
-.logo h1{
-    font-size: 1.2rem;
-    font-weight: 700;   
+/* Styles for the logo h1 */
+.logo h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
+/* Styles for the footer text */
 .footer__text {
-    color: #fff;
+  color: #fff;
 }
 
+/* Styles for the footer quick links */
 .footer__quick-links ul li {
-    background: transparent !important;
+  background: transparent !important;
 }
 
-.footer__quick-links ul li  a {
-    text-decoration: none;
-    color:#fff
+/* Styles for the footer quick links anchor tag */
+.footer__quick-links ul li a {
+  text-decoration: none;
+  color: #fff;
 }
 
+/* Styles for paragraph elements */
 p {
-    color: #fff;
+  color: #fff;
 }
 
+/* Styles for italic elements */
 i {
-    color: #fff;
+  color: #fff;
 }
 
+/* Styles for the quick links title */
 .quick__links-title {
-    margin-bottom: 20px;
-    color: #fff;
-    font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1.1rem;
 }
 
-
-
+/* Styles for the footer */
 .footer {
-    margin-top: 10px;
-    padding-top: 60px;
-    padding-bottom: 30px;
-    background: #0a1d37;
+  margin-top: 10px;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  background: #0a1d37;
 }
