@@ -1,11 +1,11 @@
 # Shemach
 
-yonas sisay 0708/12
-yonatan tesfay 0722/12
-mintesnot markos 1025/12
-zerubabel kassahun 1070/12
-zekarias tesfaye 1069/12
-yohannes mengistu 1064/12
+- Yonas Sisay (0708/12)
+- Yonatan Tesfay (0722/12)
+- Mintesnot Markos (1025/12)
+- Zerubabel Kassahun (1070/12)
+- Zekarias Tesfaye (1069/12)
+- Yohannes Mengistu (1064/12)
 
 ## Prerequisites
 
@@ -39,4 +39,3 @@ Before you begin, ensure you have met the following requirements:
     ```bash
     npm run dev
     ```
-
