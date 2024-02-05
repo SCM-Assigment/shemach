@@ -1,32 +1,38 @@
+/* Styles for the services section */
 .services {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
+
+/* Styles for each service item */
 .service_item {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    column-gap: 0.7rem;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.service_item span i{
-    font-size:2.2rem; 
-    background: #0a1d37;
-    padding: 10px;
-    border-radius: 50px;
-    color: #fff;
-    font-weight: 400 !important;
+/* Styles for the icon within the service item */
+.service_item span i {
+  font-size: 2.2rem;
+  background: #0a1d37;
+  padding: 10px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 400 !important;
 }
 
+/* Styles for the heading within the service item */
 .service_item h3 {
-    color: #0a1d37;
-    font-size: 1.1rem;
-    font-weight: 600;
+  color: #0a1d37;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
+/* Styles for the paragraph within the service item */
 .service_item p {
-    font-size: 0.9rem;
-    margin-top: 5px;
-    color: #222;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #222;
 }
